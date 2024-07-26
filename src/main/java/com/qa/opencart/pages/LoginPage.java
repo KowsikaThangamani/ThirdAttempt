@@ -56,6 +56,7 @@ public class LoginPage {
 	
 	@Step("Navigating to Registration Page....")
 	public RegistrationPage navigateToRegistrationPage() {
+		Log.info("Navigating to Registration Page");
 		eleUtil.waitForElementVisible(registerLink, TimeUtil.DEFAULT_SHORT_TIME).click();
 		return new RegistrationPage(driver);
 	}
