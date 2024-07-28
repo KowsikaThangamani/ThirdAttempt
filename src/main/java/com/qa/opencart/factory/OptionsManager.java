@@ -26,12 +26,12 @@ public class OptionsManager {
 		co = new ChromeOptions();
 		if (Boolean.parseBoolean(prop.getProperty("remote").trim())) {
 			co.setCapability("browserName", "chrome");
-			//co.setBrowserVersion(prop.getProperty("browserVersion").trim());
-			//Map<String, Object> selenoidOptions = new HashMap<>();
-			//selenoidOptions.put("screenResolution", "1280x1024x24");
-			//selenoidOptions.put("enableVNC", true);
-			//selenoidOptions.put("testName", prop.getProperty("testName"));
-			//co.setCapability("selenoid:options", selenoidOptions);
+			co.setBrowserVersion(prop.getProperty("browserVersion").trim());
+			Map<String, Object> selenoidOptions = new HashMap<>();
+			selenoidOptions.put("screenResolution", "1280x1024x24");
+			selenoidOptions.put("enableVNC", true);
+			selenoidOptions.put("testName", prop.getProperty("testName"));
+			co.setCapability("selenoid:options", selenoidOptions);
 		}
 		if (Boolean.parseBoolean(prop.getProperty("headless").trim())) {
 			Log.info("Running chrome in HEADLESS mode");
@@ -48,12 +48,12 @@ public class OptionsManager {
 		fo = new FirefoxOptions();
 		if (Boolean.parseBoolean(prop.getProperty("remote").trim())) {
 			fo.setCapability("browserName", "firefox");
-			//fo.setBrowserVersion(prop.getProperty("browserVersion"));
-			//Map<String, Object> selenoidOptions = new HashMap<>();
-			//selenoidOptions.put("screenResolution", "1280x1024x24");
-			//selenoidOptions.put("enableVNC", true);
-			//selenoidOptions.put("testName", prop.getProperty("testName"));
-			//fo.setCapability("selenoid:options", selenoidOptions);
+			fo.setBrowserVersion(prop.getProperty("browserVersion"));
+			Map<String, Object> selenoidOptions = new HashMap<>();
+			selenoidOptions.put("screenResolution", "1280x1024x24");
+			selenoidOptions.put("enableVNC", true);
+			selenoidOptions.put("testName", prop.getProperty("testName"));
+			fo.setCapability("selenoid:options", selenoidOptions);
 		}
 		if (Boolean.parseBoolean(prop.getProperty("headless").trim())) {
 			Log.info("Running firefox in HEADLESS mode");
