@@ -29,6 +29,8 @@ public class BaseTest {
 	protected ProductInfoPage productInfoPage;
 	protected SoftAssert softAssert;
 	
+	//Full Project done
+	
 	@Step("Launching the browser : {0} and initializing properties")
 	@Parameters({"browser", "browserVersion", "testName"})
 	@BeforeTest
